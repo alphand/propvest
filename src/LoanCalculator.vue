@@ -49,6 +49,8 @@
             Total Principal: {{ principalSum }}
           </li>
         </ul>
+
+        <amortization-table :data="breakdown"></amortization-table>
       </div>
       
     </div>
@@ -59,8 +61,12 @@
 
 <script>
 import finance from 'loancalculator';
+import AmortizationTable from './components/AmortizationTable.vue';
 
 export default {
+  components:{
+    AmortizationTable
+  },
   data () {
     return {
       amount: 0,
